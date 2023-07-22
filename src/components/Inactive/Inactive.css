@@ -1,0 +1,28 @@
+.inactive-div {
+	width: 80px;
+	height: 25px;
+	background-color: #fdeeee;
+	border-radius: 50px;
+	position: relative;
+	margin: auto;
+}
+
+.inactive-circle {
+	width: 10px;
+	height: 10px;
+	background-color: #ee5f5b;
+	border-radius: 100%;
+	position: absolute;
+	margin-top: 7.5px;
+	margin-left: 7.5px;
+}
+
+.inactive-text {
+	color: #ee5f5b;
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	position: absolute;
+	right: 5px;
+	top: 4px;
+}
