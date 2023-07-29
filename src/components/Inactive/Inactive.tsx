@@ -1,21 +1,23 @@
 import React from "react";
 
-// Styles
-import "./Inactive.css";
+// Components
+import BaseChip from "../BaseChip";
 
-export interface InactiveProps {
+// Constants
+import * as constants from "./constants";
+
+// Types
+interface InactiveProps {
 	label?: string;
 }
 
-const Inactive = (props: InactiveProps) => {
-	const { label = "Inactive" } = props;
-
-	return (
-		<div className="inactive-div">
-			<div className="inactive-circle"></div>
-			<span className="inactive-text">{label}</span>
-		</div>
-	);
-};
+const Inactive = (props: InactiveProps) => (
+	<BaseChip
+		fontColor={constants.COLOR}
+		backgroundColor={constants.BACKGROUND_COLOR}
+		label={props.label ?? constants.LABEL}
+		withBlinkAnimation={false}
+	/>
+);
 
 export default Inactive;

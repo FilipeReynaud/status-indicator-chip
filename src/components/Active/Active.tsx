@@ -1,21 +1,23 @@
 import React from "react";
 
-// Styles
-import "./Active.css";
+// Components
+import BaseChip from "../BaseChip";
 
-export interface ActiveProps {
+// Constants
+import * as constants from "./constants";
+
+// Types
+interface ActiveProps {
 	label?: string;
 }
 
-const Active = (props: ActiveProps) => {
-	const { label = "Active" } = props;
-
-	return (
-		<div className="active-div">
-			<div className="active-circle"></div>
-			<span className="active-text">{label}</span>
-		</div>
-	);
-};
+const Active = (props: ActiveProps) => (
+	<BaseChip
+		fontColor={constants.COLOR}
+		backgroundColor={constants.BACKGROUND_COLOR}
+		label={props.label ?? constants.LABEL}
+		withBlinkAnimation
+	/>
+);
 
 export default Active;

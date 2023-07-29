@@ -1,20 +1,44 @@
 import React from "react";
 
-// Statuses
+// Components
 import Active from "../Active";
 import Inactive from "../Inactive";
+import BaseChip from "../BaseChip/BaseChip";
 
-export interface InactiveProps {
-	type: "active" | "inactive";
+// Types
+interface ActiveStatusChipProps {
+	type: "active";
+	label?: string;
 }
 
-const StatusChip = (props: InactiveProps) => {
+interface InactiveStatusChipProps {
+	type: "inactive";
+	label?: string;
+}
+
+interface CustomStatusChipProps {
+	type: "custom";
+	fontColor: string;
+	backgroundColor: string;
+	label: string;
+	withBlinkAnimation?: boolean;
+	size?: "sm" | "md" | "lg";
+}
+
+type StatusChipProps =
+	| ActiveStatusChipProps
+	| InactiveStatusChipProps
+	| CustomStatusChipProps;
+
+const StatusChip = (props: StatusChipProps) => {
 	const { type } = props;
 
 	if (type === "active") {
-		return <Active />;
+		return <Active label={props.label} />;
 	} else if (type === "inactive") {
-		return <Inactive />;
+		return <Inactive label={props.label} />;
+	} else if (type === "custom") {
+		return <BaseChip {...props} />;
 	} else {
 		return null;
 	}
