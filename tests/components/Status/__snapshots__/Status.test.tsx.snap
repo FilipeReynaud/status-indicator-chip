@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Status active status chip should be rendered properly 1`] = `
+<div>
+  <table
+    class="status-indicator-table"
+    style="background-color: rgb(221, 236, 209);"
+  >
+    <tbody>
+      <tr>
+        <td>
+          <div
+            class="status-indicator-circle"
+            style="background-color: rgb(14, 175, 0); --animation-color: #0eaf00; animation-name: blink; animation-duration: 1s; animation-iteration-count: infinite;"
+          />
+        </td>
+        <td>
+          <span
+            class="status-indicator-label"
+            style="color: rgb(14, 175, 0); font-size: 11px;"
+          >
+            Active
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Status custom status chip should be rendered properly 1`] = `
+<div>
+  <table
+    class="status-indicator-table"
+    style="background-color: lightblue;"
+  >
+    <tbody>
+      <tr>
+        <td>
+          <div
+            class="status-indicator-circle"
+            style="background-color: blue; --animation-color: blue; animation-name: blink; animation-duration: 1s; animation-iteration-count: infinite;"
+          />
+        </td>
+        <td>
+          <span
+            class="status-indicator-label"
+            style="color: blue; font-size: 11px;"
+          >
+            Test
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Status inactive status chip should be rendered properly 1`] = `
+<div>
+  <table
+    class="status-indicator-table"
+    style="background-color: rgb(253, 238, 238);"
+  >
+    <tbody>
+      <tr>
+        <td>
+          <div
+            class="status-indicator-circle"
+            style="background-color: rgb(238, 95, 91);"
+          />
+        </td>
+        <td>
+          <span
+            class="status-indicator-label"
+            style="color: rgb(238, 95, 91); font-size: 11px;"
+          >
+            Inactive
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

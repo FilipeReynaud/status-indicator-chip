@@ -14,10 +14,11 @@
 		"moduleResolution": "node", // Follow node.js rules for finding modules
 		"allowSyntheticDefaultImports": true, // Assumes default exports if none are created manually
 		"emitDeclarationOnly": true, // Don't generate JS only export type declarations
-		"typeRoots": ["./src/types"],
+		// "typeRoots": ["./src/types", "jest"],
 		"paths": {
 			"@src/*": ["./src/*"]
-		}
+		},
+		"types": ["jest", "node"]
 	},
 	"include": ["src"]
 }

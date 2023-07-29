@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseChip should render properly 1`] = `
+<div>
+  <table
+    class="status-indicator-table"
+    style="background-color: lightblue;"
+  >
+    <tbody>
+      <tr>
+        <td>
+          <div
+            class="status-indicator-circle"
+            style="background-color: blue; --animation-color: blue; animation-name: blink; animation-duration: 1s; animation-iteration-count: infinite;"
+          />
+        </td>
+        <td>
+          <span
+            class="status-indicator-label"
+            style="color: blue; font-size: 11px;"
+          >
+            Test
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

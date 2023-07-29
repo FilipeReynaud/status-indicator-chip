@@ -25,7 +25,7 @@ interface CustomStatusChipProps {
 	size?: "sm" | "md" | "lg";
 }
 
-type StatusChipProps =
+export type StatusChipProps =
 	| ActiveStatusChipProps
 	| InactiveStatusChipProps
 	| CustomStatusChipProps;

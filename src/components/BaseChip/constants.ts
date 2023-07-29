@@ -4,6 +4,10 @@ const CLASS_NAMES = {
 	statusIndicatorLabel: "status-indicator-label",
 };
 
+const DATA_TEST_IDS = {
+	...CLASS_NAMES,
+};
+
 const FALLBACK_CSS_VALUES = {
 	color: "#0eaf00",
 	backgroundColor: "#ddecd1",
@@ -20,4 +24,10 @@ const DEFAULT_VALUES = {
 	size: "md",
 };
 
-export { CLASS_NAMES, FALLBACK_CSS_VALUES, LABEL_SIZE, DEFAULT_VALUES };
+export {
+	DATA_TEST_IDS,
+	CLASS_NAMES,
+	FALLBACK_CSS_VALUES,
+	LABEL_SIZE,
+	DEFAULT_VALUES,
+};

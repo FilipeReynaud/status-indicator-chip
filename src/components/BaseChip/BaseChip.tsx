@@ -16,7 +16,7 @@ interface BaseChipCSS extends CSSProperties {
 	"--animation-color": string;
 }
 
-interface BaseChipProps {
+export interface BaseChipProps {
 	fontColor: string;
 	backgroundColor: string;
 	label: string;
@@ -33,12 +33,15 @@ const appendStylesTo = (className: string, styles: BaseChipProps) => {
 	} else if (className === CLASS_NAMES.statusIndicatorCircle) {
 		return {
 			backgroundColor: styles.fontColor ?? FALLBACK_CSS_VALUES.color,
-			"--animation-color": styles.withBlinkAnimation
-				? styles.fontColor ?? FALLBACK_CSS_VALUES.color
-				: "",
-			animationName: styles.withBlinkAnimation ? "blink" : "",
-			animationDuration: "1s",
-			animationIterationCount: "infinite",
+			...(styles.withBlinkAnimation
+				? {
+						"--animation-color":
+							styles.fontColor ?? FALLBACK_CSS_VALUES.color,
+						animationName: "blink",
+						animationDuration: "1s",
+						animationIterationCount: "infinite",
+				  }
+				: {}),
 		} as BaseChipCSS;
 	} else if (className === CLASS_NAMES.statusIndicatorLabel) {
 		return {

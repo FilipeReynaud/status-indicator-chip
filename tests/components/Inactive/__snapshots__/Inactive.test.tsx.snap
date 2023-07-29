@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Inactive should render properly 1`] = `
+<div>
+  <table
+    class="status-indicator-table"
+    style="background-color: rgb(253, 238, 238);"
+  >
+    <tbody>
+      <tr>
+        <td>
+          <div
+            class="status-indicator-circle"
+            style="background-color: rgb(238, 95, 91);"
+          />
+        </td>
+        <td>
+          <span
+            class="status-indicator-label"
+            style="color: rgb(238, 95, 91); font-size: 11px;"
+          >
+            Inactive
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
