@@ -1,10 +1,12 @@
-# NPM Publish is the name for this action
-name: NPM Publish
+# CI
+name: CI Pipeline
 
-# This action will trigger on every release get created
+# This action will trigger on every pull request get created
 on:
-  release:
-    types: [push, pull_request]
+  pull_request:
+    types:
+      - opened
+      - synchronize
 
 # Job will run on a ubuntu instance
 jobs:
