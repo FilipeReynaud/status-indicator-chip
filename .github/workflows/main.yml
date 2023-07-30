@@ -3,32 +3,25 @@ name: CI Pipeline
 
 # This action will trigger on every pull request get created
 on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
+    pull_request:
+        types:
+            - opened
+            - synchronize
 
 # Job will run on a ubuntu instance
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      # Checkout the code
-      - uses: actions/checkout@v2
-      # Setup node with version 16.x and NPM registry url
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "16.x"
-          registry-url: "https://registry.npmjs.org"
-      # Install to install project packages
-      - run: npm install
-      # Execute tests
-      - run: npm run test
-      # Build the package
-      - run: npm run build
-      # publish the files to NPM
-      #- run: npm publish --access public
-      # for publishing, npm need authorization. We add the NPM token to the environment which will take care of authorization to publish to the package
-       # env:
-        #  NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            # Checkout the code
+            - uses: actions/checkout@v3
+            # Setup node with version 16
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 16
+            # Install to install project packages
+            - run: npm install
+            # Execute tests
+            - run: npm run test
+            # Build the package
+            - run: npm run build
