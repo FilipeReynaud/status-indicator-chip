@@ -9,6 +9,7 @@ import * as constants from "./constants";
 // Types
 interface ActiveProps {
 	label?: string;
+	size?: "sm" | "md" | "lg";
 }
 
 const Active = (props: ActiveProps) => (
@@ -16,6 +17,7 @@ const Active = (props: ActiveProps) => (
 		fontColor={constants.COLOR}
 		backgroundColor={constants.BACKGROUND_COLOR}
 		label={props.label ?? constants.LABEL}
+		size={props.size ?? constants.SIZE}
 		withBlinkAnimation
 	/>
 );

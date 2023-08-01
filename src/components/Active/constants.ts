@@ -4,5 +4,6 @@ const BACKGROUND_COLOR = "#ddecd1";
 
 // Defaults
 const LABEL = "Active";
+const SIZE = "md";
 
-export { COLOR, BACKGROUND_COLOR, LABEL };
+export { COLOR, SIZE, BACKGROUND_COLOR, LABEL };

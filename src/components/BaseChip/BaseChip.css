@@ -7,12 +7,9 @@
 	min-height: 25px;
 	border-radius: 50px;
 	position: relative;
-	padding: 0 7px 0 5px;
 }
 
 .status-indicator-circle {
-	width: 10px;
-	height: 10px;
 	border-radius: 100%;
 }
 

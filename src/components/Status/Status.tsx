@@ -9,11 +9,13 @@ import BaseChip from "../BaseChip/BaseChip";
 interface ActiveStatusChipProps {
 	type: "active";
 	label?: string;
+	size?: "sm" | "md" | "lg";
 }
 
 interface InactiveStatusChipProps {
 	type: "inactive";
 	label?: string;
+	size?: "sm" | "md" | "lg";
 }
 
 interface CustomStatusChipProps {
@@ -34,9 +36,9 @@ const StatusChip = (props: StatusChipProps) => {
 	const { type } = props;
 
 	if (type === "active") {
-		return <Active label={props.label} />;
+		return <Active label={props.label} size={props.size} />;
 	} else if (type === "inactive") {
-		return <Inactive label={props.label} />;
+		return <Inactive label={props.label} size={props.size} />;
 	} else if (type === "custom") {
 		return <BaseChip {...props} />;
 	} else {
