@@ -4,19 +4,22 @@ exports[`Status active status chip should be rendered properly 1`] = `
 <div>
   <table
     class="status-indicator-table"
-    style="background-color: rgb(221, 236, 209);"
+    data-test="status-indicator-table"
+    style="padding: 0px 7px 0px 5px; background-color: rgb(221, 236, 209);"
   >
     <tbody>
       <tr>
         <td>
           <div
             class="status-indicator-circle"
-            style="background-color: rgb(14, 175, 0); --animation-color: #0eaf00; animation-name: blink; animation-duration: 1s; animation-iteration-count: infinite;"
+            data-test="status-indicator-circle"
+            style="width: 10px; height: 10px; background-color: rgb(14, 175, 0); --animation-color: #0eaf00; animation-name: blink; animation-duration: 1s; animation-iteration-count: infinite;"
           />
         </td>
         <td>
           <span
             class="status-indicator-label"
+            data-test="status-indicator-label"
             style="color: rgb(14, 175, 0); font-size: 11px;"
           >
             Active
@@ -32,19 +35,22 @@ exports[`Status custom status chip should be rendered properly 1`] = `
 <div>
   <table
     class="status-indicator-table"
-    style="background-color: lightblue;"
+    data-test="status-indicator-table"
+    style="padding: 0px 7px 0px 5px; background-color: lightblue;"
   >
     <tbody>
       <tr>
         <td>
           <div
             class="status-indicator-circle"
-            style="background-color: blue; --animation-color: blue; animation-name: blink; animation-duration: 1s; animation-iteration-count: infinite;"
+            data-test="status-indicator-circle"
+            style="width: 10px; height: 10px; background-color: blue; --animation-color: blue; animation-name: blink; animation-duration: 1s; animation-iteration-count: infinite;"
           />
         </td>
         <td>
           <span
             class="status-indicator-label"
+            data-test="status-indicator-label"
             style="color: blue; font-size: 11px;"
           >
             Test
@@ -60,19 +66,22 @@ exports[`Status inactive status chip should be rendered properly 1`] = `
 <div>
   <table
     class="status-indicator-table"
-    style="background-color: rgb(253, 238, 238);"
+    data-test="status-indicator-table"
+    style="padding: 0px 7px 0px 5px; background-color: rgb(253, 238, 238);"
   >
     <tbody>
       <tr>
         <td>
           <div
             class="status-indicator-circle"
-            style="background-color: rgb(238, 95, 91);"
+            data-test="status-indicator-circle"
+            style="width: 10px; height: 10px; background-color: rgb(238, 95, 91);"
           />
         </td>
         <td>
           <span
             class="status-indicator-label"
+            data-test="status-indicator-label"
             style="color: rgb(238, 95, 91); font-size: 11px;"
           >
             Inactive

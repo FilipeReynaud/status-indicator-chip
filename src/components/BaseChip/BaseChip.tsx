@@ -6,9 +6,11 @@ import "./BaseChip.css";
 // Constants
 import {
 	CLASS_NAMES,
+	CIRCLE_SIZE,
 	DEFAULT_VALUES,
-	FALLBACK_CSS_VALUES,
 	LABEL_SIZE,
+	TABLE_PADDING,
+	DATA_TEST_IDS,
 } from "./constants";
 
 // Types
@@ -26,17 +28,29 @@ export interface BaseChipProps {
 
 const appendStylesTo = (className: string, styles: BaseChipProps) => {
 	if (className === CLASS_NAMES.statusIndicatorTable) {
+		const padding = styles.size
+			? TABLE_PADDING[styles.size]
+			: TABLE_PADDING[DEFAULT_VALUES.size as keyof typeof TABLE_PADDING];
+		const backgroundColor =
+			styles.backgroundColor ?? DEFAULT_VALUES.backgroundColor;
+
 		return {
-			backgroundColor:
-				styles.backgroundColor ?? FALLBACK_CSS_VALUES.backgroundColor,
+			padding,
+			backgroundColor,
 		};
 	} else if (className === CLASS_NAMES.statusIndicatorCircle) {
+		const sizeInPx = styles.size
+			? CIRCLE_SIZE[styles.size]
+			: CIRCLE_SIZE[DEFAULT_VALUES.size as keyof typeof CIRCLE_SIZE];
+		const backgroundColor = styles.fontColor ?? DEFAULT_VALUES.color;
+
 		return {
-			backgroundColor: styles.fontColor ?? FALLBACK_CSS_VALUES.color,
+			width: sizeInPx,
+			height: sizeInPx,
+			backgroundColor,
 			...(styles.withBlinkAnimation
 				? {
-						"--animation-color":
-							styles.fontColor ?? FALLBACK_CSS_VALUES.color,
+						"--animation-color": backgroundColor,
 						animationName: "blink",
 						animationDuration: "1s",
 						animationIterationCount: "infinite",
@@ -44,8 +58,10 @@ const appendStylesTo = (className: string, styles: BaseChipProps) => {
 				: {}),
 		} as BaseChipCSS;
 	} else if (className === CLASS_NAMES.statusIndicatorLabel) {
+		const color = styles.fontColor ?? DEFAULT_VALUES.color;
+
 		return {
-			color: styles.fontColor,
+			color,
 			fontSize: styles.size
 				? LABEL_SIZE[styles.size]
 				: LABEL_SIZE[DEFAULT_VALUES.size as keyof typeof LABEL_SIZE],
@@ -59,6 +75,7 @@ const BaseChip = (props: BaseChipProps) => (
 	<table
 		className={CLASS_NAMES.statusIndicatorTable}
 		style={appendStylesTo(CLASS_NAMES.statusIndicatorTable, props)}
+		data-test={DATA_TEST_IDS.statusIndicatorTable}
 	>
 		<tbody>
 			<tr>
@@ -69,6 +86,7 @@ const BaseChip = (props: BaseChipProps) => (
 							CLASS_NAMES.statusIndicatorCircle,
 							props
 						)}
+						data-test={DATA_TEST_IDS.statusIndicatorCircle}
 					></div>
 				</td>
 				<td>
@@ -78,6 +96,7 @@ const BaseChip = (props: BaseChipProps) => (
 							CLASS_NAMES.statusIndicatorLabel,
 							props
 						)}
+						data-test={DATA_TEST_IDS.statusIndicatorLabel}
 					>
 						{props.label ?? DEFAULT_VALUES.label}
 					</span>

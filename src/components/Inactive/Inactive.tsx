@@ -9,6 +9,7 @@ import * as constants from "./constants";
 // Types
 interface InactiveProps {
 	label?: string;
+	size?: "sm" | "md" | "lg";
 }
 
 const Inactive = (props: InactiveProps) => (
@@ -16,6 +17,7 @@ const Inactive = (props: InactiveProps) => (
 		fontColor={constants.COLOR}
 		backgroundColor={constants.BACKGROUND_COLOR}
 		label={props.label ?? constants.LABEL}
+		size={props.size ?? constants.SIZE}
 		withBlinkAnimation={false}
 	/>
 );
