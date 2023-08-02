@@ -7,7 +7,7 @@ import BaseChip from "../BaseChip";
 import * as constants from "./constants";
 
 // Types
-interface InactiveProps {
+export interface InactiveProps {
 	label?: string;
 	size?: "sm" | "md" | "lg";
 }

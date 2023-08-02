@@ -1,4 +1,5 @@
 const config = {
+	setupFilesAfterEnv: ["<rootDir>/tests/setup-tests.ts"],
 	moduleDirectories: ["node_modules", "src"],
 	moduleFileExtensions: ["js", "ts", "tsx", "json", "node"],
 	roots: ["src", "tests"],
@@ -8,7 +9,7 @@ const config = {
 		"**/__tests__/**/*.[jt]s?(x)",
 		"**/?(*.)+(spec|test).[tj]s?(x)",
 	],
-	testPathIgnorePatterns: ["\\\\node_modules\\\\"],
+	testPathIgnorePatterns: ["\\\\node_modules\\\\", "setup-tests.ts"],
 	transform: {
 		"^.+\\.(ts|tsx)$": "ts-jest", // That one tells Jest to use ts-jest when dealing with TypeScript files
 	},
